@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(
       MaterialApp(
+             debugShowCheckedModeBanner: false,
         home: Homepage(),
       ),
     );
@@ -77,8 +78,53 @@ class _HomepageState extends State<Homepage> {
                  ),
                ),
              ),
+          ),
+          SizedBox(height: 20,),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(30,10,40,0),
+            child: Column(
+              children: [
+                 inputForm(), 
+              ],
+            ),
           )
+          
         ],
+      ),
+    );
+  }
+  Widget inputForm(){
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0,),
+      child: Column(
+         crossAxisAlignment: CrossAxisAlignment.start,
+         children: [
+          Text(
+            "title",
+            style: GoogleFonts.robotoMono(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          
+          ),
+            SizedBox(height: 10,),
+          Container(
+            height: 60,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                hintText: "hint text",
+              ),
+            ),
+          ),
+          SizedBox(height: 10,)
+         ],
+      
       ),
     );
   }
