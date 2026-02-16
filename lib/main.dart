@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(
       MaterialApp(
@@ -25,13 +26,61 @@ class _HomepageState extends State<Homepage> {
           color: Colors.white,
         ),
         actions: [
-          Icon(
-            Icons.info,
-            size: 30,
-            color: Colors.white,
+          Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: Icon(
+              Icons.info,
+              size: 30,
+              color: Colors.white,
+            ),
           ),
+        ],
+      ),
+       body:body(),
+    );
+  }
+  Widget body(){
+    return Container(
+      color: Colors.grey[200],
+      child: Column(
+        children: [
+          Container(
+            height: 170,
+            decoration: BoxDecoration(
+              color: Colors.purple,
+              borderRadius: BorderRadius.only(
+             
+                bottomRight: Radius.circular(100),
+              ),
+            ),
+             child: Padding(
+               padding: const EdgeInsets.only(bottom: 8.0),
+               child: Align(
+                alignment: Alignment.center,
+                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Fixed Deposit",
+                    style: GoogleFonts.robotoMono(
+                      fontSize: 35,
+                      color: Colors.white,),
+                    ),
+                     Text("Calculator",
+                    style: GoogleFonts.robotoMono(
+                      fontSize: 35,
+                      color: Colors.white,),
+                    ),
+                    
+                    
+                  ],
+                 ),
+               ),
+             ),
+          )
         ],
       ),
     );
   }
+ 
 }
